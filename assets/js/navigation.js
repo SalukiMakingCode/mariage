@@ -1,4 +1,6 @@
 let goto=0;
+let yLeft=0;
+let yRight=0;
 
 function firstNavigation () {
    document.getElementById("btnAccueil").style.display = "none";
@@ -15,12 +17,20 @@ function doesGoTo () {
    let y=centre.dataset.y;
    if (x==="1" && y==="1") { goto="no"; }
    if (x==="1" && y==="2") { goto="no"; }
-   if (x==="1" && y==="3") { goto=2; }
+   if (x==="1" && y==="3") { goto="2"; }
    if (x==="1" && y==="4") { goto="no"; }
-   if (x==="2" && y==="1") { goto=1; }
+   if (x==="2" && y==="1") { goto="1"; }
    if (x==="2" && y==="2") { goto="no"; }
-   if (x==="2" && y==="3") { goto="no"; }
+   if (x==="2" && y==="3") { goto="3"; }
    if (x==="2" && y==="4") { goto="no"; }
+   if (x==="3" && y==="1") { goto="2"; }
+   if (x==="3" && y==="2") { goto="no"; }
+   if (x==="3" && y==="3") { goto="4"; }
+   if (x==="3" && y==="4") { goto="no"; }
+   if (x==="4" && y==="1") { goto="3"; }
+   if (x==="4" && y==="2") { goto="no"; }
+   if (x==="4" && y==="3") { goto="no"; }
+   if (x==="4" && y==="4") { goto="no"; }
    if (goto==="no") { document.getElementById("goTo").style.display = "none"; }
    else { document.getElementById("goTo").style.display = "flex";}
 }
@@ -31,17 +41,29 @@ function goGoGo () {
    let y=centre.dataset.y;
    if (x==="1" && y==="1") { goto="no"; }
    if (x==="1" && y==="2") { goto="no"; }
-   if (x==="1" && y==="3") { goto=2; }
+   if (x==="1" && y==="3") { goto="2"; }
    if (x==="1" && y==="4") { goto="no"; }
-   if (x==="2" && y==="1") { goto=1; }
+   if (x==="2" && y==="1") { goto="1"; }
    if (x==="2" && y==="2") { goto="no"; }
-   if (x==="2" && y==="3") { goto="no"; }
+   if (x==="2" && y==="3") { goto="3"; }
    if (x==="2" && y==="4") { goto="no"; }
+   if (x==="3" && y==="1") { goto="2"; }
+   if (x==="3" && y==="2") { goto="no"; }
+   if (x==="3" && y==="3") { goto="4"; }
+   if (x==="3" && y==="4") { goto="no"; }
+   if (x==="4" && y==="1") { goto="3"; }
+   if (x==="4" && y==="2") { goto="no"; }
+   if (x==="4" && y==="3") { goto="no"; }
+   if (x==="4" && y==="4") { goto="no"; }
    if (goto!=="no") {
       centre.dataset.x=goto;
-      document.getElementById("gauche").style.backgroundImage="url('./assets/img/"+goto+"-"+y+".jpg')";
+      if (y==="1") {yLeft="4";yRight="2"; }
+      if (y==="2") {yLeft="1";yRight="3"; }
+      if (y==="3") {yLeft="2";yRight="4"; }
+      if (y==="4") {yLeft="3";yRight="1"; }
+      document.getElementById("gauche").style.backgroundImage="url('./assets/img/"+goto+"-"+yLeft+".jpg')";
       document.getElementById("centre").style.backgroundImage="url('./assets/img/"+goto+"-"+y+".jpg')";
-      document.getElementById("droite").style.backgroundImage="url('./assets/img/"+goto+"-"+y+".jpg')";
+      document.getElementById("droite").style.backgroundImage="url('./assets/img/"+goto+"-"+yRight+".jpg')";
    }
    doesGoTo();
 }

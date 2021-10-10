@@ -11,23 +11,25 @@
 <body>
 <header>
     <nav>
-        <div>Mariage Steve & Isabelle</div>
-        <div>09 mai 2020</div>
-        <div>04 septembre 2021</div>
+        <div id="title">Mariage <br/>Isabelle <br/>& Steve</div>
+        <div id="titleDate">04 septembre 2021</div>
+        <div id="titlefake"> </div>
     </nav>
 </header>
 <main id="main">
     <article class="accueil" id="accueil">
         <h1 id="btnAccueil" onclick="firstNavigation();">Entrer</h1>
     </article>
-    <article id="gauche" onclick="pivote('left')">
-        <h2>Tourner<br/>à gauche</h2>
+    <article id="gauche">
+        <h2> < </h2>
+        <img src="./assets/img/1-2.jpg" alt="" id="gaucheImg" onclick="pivote('left')"/>
     </article>
     <article id="centre" data-x="1" data-y="3" onclick="goGoGo()">
         <h3 id="goTo">Avancer</h3>
     </article>
-    <article id="droite" onclick="pivote('right')">
-        <h2>Tourner<br/>à droite</h2>
+    <article id="droite">
+        <img src="./assets/img/1-4.jpg" alt="" id="droiteImg" onclick="pivote('right')"/>
+        <h2> > </h2>
     </article>
 </main>
 <footer>

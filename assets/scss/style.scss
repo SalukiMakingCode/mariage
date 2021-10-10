@@ -6,26 +6,58 @@ $hforw600:350;
 $hforw768:450;
 $hforw850:500;
 $hforw1000:650;
-$hforw1250:760;
-$hforw1500:770;
-$bgcolor:black;
+$hforw1250:730;
+$hforw1500:740;
+$bgcolor:#006475;
+$fontFamH: 'Ink Free', cursive;
+$fontF:  'Dosis', sans-serif;
+h1, h2, h3, h4, div{ font-family: $fontFamH; }
+
 body {
   header {
     margin: 0 auto;
     max-width:80%;
     nav {
+      z-index: 2;
       display: flex;
-      justify-content: space-around;
+      flex-direction: row;
       background-color: $bgcolor;
       color:white;
-      text-align: center;
-      height:1rem;
+      height:1.4rem;
       font-size: 1rem;
+      & div {
+        width:33.3%;
+        &#title {
+          @media screen and (min-width:300px) {font-size: 0.8rem;padding-top: 1.3rem;}
+          @media screen and (min-width:400px) {font-size: 1rem;padding-top: 1.3rem;}
+          @media screen and (min-width:500px) {font-size: 1rem;padding-top: 1.3rem;}
+          @media screen and (min-width:600px) {font-size: 1.5rem;padding-top: 1.3rem;}
+          @media screen and (min-width:768px) {font-size: 2rem;padding-top: 1.3rem;}
+          @media screen and (min-width:850px) {font-size: 2.4rem;}
+          @media screen and (min-width:1000px) {font-size: 2.8rem;}
+          @media screen and (min-width:1250px) {font-size: 3rem;}
+          font-size: 3rem;
+          width:22%;
+          text-align: center;
+          z-index:10;
+          padding-top: 1rem;
+          text-shadow: 4px 4px 3px #000000;
+        }
+        &#titleDate {
+          text-align: center;
+          width:56%;
+        }
+        &#titlefake {
+          text-align: center;
+          width: 22%;
+        }
+      }
     }
   }
   main {
     margin: 0 auto;
     max-width:80%;
+    background-color: $bgcolor;
     & .accueil {
       @media screen and (min-width:300px) {height:200px;}
       @media screen and (min-width:400px) {height:250px;}
@@ -63,22 +95,31 @@ body {
       @media screen and (min-width:1000px) {height:$hforw1000+px;}
       @media screen and (min-width:1250px) {height:$hforw1250+px;}
       @media screen and (min-width:1500px) {height:$hforw1500+px;}
+      z-index: 1;
       cursor:pointer;
       display:none;
       justify-content: center;
       align-items: center;
-      background: no-repeat center/90% url("../img/1-2.jpg") $bgcolor;
       width:22%;
+      background: url("../img/background.jpg");
+      & #gaucheImg {
+        width:90%;
+        border-radius: 5%;
+        transform: translate(-24px);
+      }
       & h2 {
+        z-index: 2;
+        transform: translate(28px);
         background-color: #00000080;
         color: white;
+        font-weight: bolder;
         @media screen and (min-width: 0px) {
           padding: 1rem;
-          font-size: 0.5rem;
+          font-size: 1rem;
         }
         @media screen and (min-width: 768px) {
           padding: 1rem;
-          font-size: 1rem;
+          font-size: 2rem;
         }
       }
     }
@@ -92,6 +133,7 @@ body {
       @media screen and (min-width:1000px) {height:$hforw1000+px;}
       @media screen and (min-width:1250px) {height:$hforw1250+px;}
       @media screen and (min-width:1500px) {height:$hforw1500+px;}
+      border-radius: 5%;
       display:none;
       justify-content:center;
       align-items: flex-end;
@@ -120,22 +162,29 @@ body {
       @media screen and (min-width:1000px) {height:$hforw1000+px;}
       @media screen and (min-width:1250px) {height:$hforw1250+px;}
       @media screen and (min-width:1500px) {height:$hforw1500+px;}
+      background: url("../img/background.jpg");
       cursor:pointer;
       display: none;
       justify-content: center;
       align-items: center;
-      background: no-repeat center/90% url("../img/1-4.jpg") $bgcolor;
       width: 22%;
+      & #droiteImg {
+        width:90%;
+        border-radius: 5%;
+        transform: translate(24px);
+      }
       & h2 {
+        transform: translate(-28px);
         background-color: #00000080;
         color: white;
+        font-weight: bolder;
         @media screen and (min-width: 0px) {
           padding: 1rem;
-          font-size: 0.5rem;
+          font-size: 1rem;
         }
         @media screen and (min-width: 768px) {
           padding: 1rem;
-          font-size: 1rem;
+          font-size: 2rem;
         }
       }
     }

@@ -184,9 +184,9 @@ function goGoGo () {
       if (y==="2") {yLeft="1";yRight="3"; }
       if (y==="3") {yLeft="2";yRight="4"; }
       if (y==="4") {yLeft="3";yRight="1"; }
-      document.getElementById("gauche").style.backgroundImage="url('./assets/img/"+goto+"-"+yLeft+".jpg')";
+      document.getElementById("gaucheImg").src="./assets/img/"+goto+"-"+yLeft+".jpg";
       document.getElementById("centre").style.backgroundImage="url('./assets/img/"+goto+"-"+y+".jpg')";
-      document.getElementById("droite").style.backgroundImage="url('./assets/img/"+goto+"-"+yRight+".jpg')";
+      document.getElementById("droiteImg").src="./assets/img/"+goto+"-"+yRight+".jpg";
    }
    doesGoTo();
 }
@@ -208,9 +208,9 @@ function pivote(direction) {
       if (y==="4") {yLeft="4";newY="1";yRight="2"; }
    }
    centre.dataset.y=newY;
-   document.getElementById("gauche").style.backgroundImage="url('./assets/img/"+x+"-"+yLeft+".jpg')";
+   document.getElementById("gaucheImg").src="./assets/img/"+x+"-"+yLeft+".jpg";
    document.getElementById("centre").style.backgroundImage="url('./assets/img/"+x+"-"+newY+".jpg')";
-   document.getElementById("droite").style.backgroundImage="url('./assets/img/"+x+"-"+yRight+".jpg')";
+   document.getElementById("droiteImg").src="./assets/img/"+x+"-"+yRight+".jpg";
    doesGoTo ();
 }
 
